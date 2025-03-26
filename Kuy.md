@@ -2,7 +2,7 @@
 
 hello everyone name me is **ชามิก** 
 
-![Have fun in my github!](https://tenor.com/th/view/anime-rimuru-tempest-%E3%83%AA%E3%83%A0%E3%83%AB-%E3%83%86%E3%83%B3%E3%83%9A%E3%82%B9%E3%83%88-gif-7833493794443739100)
+![Have fun in my github!](https://cdn.discordapp.com/attachments/1312792273435623547/1354396564067450910/c0f528f2b66e7975edfa34da0be08062.gif?ex=67e52398&is=67e3d218&hm=c0f25bb22b06f2006acb97533d07599c2b0758856579bb45d92182aff11646ec&)
 ## **Type**
 - i want build script hack roblox
 - executor my use krnl and awp
