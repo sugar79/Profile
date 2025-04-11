@@ -10,12 +10,23 @@ screenGui.Name = "NPC_Lock_GUI"
 screenGui.Parent = game:GetService("CoreGui")
 
 local button = Instance.new("TextButton")
-button.Name = "NPC Lock: ON/OFF"
+button.Name = "ON/OFF"
 button.Size = UDim2.new(0, 150, 0, 50)
 button.Position = UDim2.new(0.5, -75, 0.9, -25)
-button.BackgroundColor3 = Color3.new(0, 0, 0)
+local gradient = Instance.new("UIGradient")
+gradient.Color = ColorSequence.new{
+    ColorSequenceKeypoint.new(0.0, Color3.fromRGB(255, 0, 0)),     -- แดง
+    ColorSequenceKeypoint.new(0.17, Color3.fromRGB(255, 127, 0)),  -- ส้ม
+    ColorSequenceKeypoint.new(0.33, Color3.fromRGB(255, 255, 0)),  -- เหลือง
+    ColorSequenceKeypoint.new(0.5, Color3.fromRGB(0, 255, 0)),     -- เขียว
+    ColorSequenceKeypoint.new(0.67, Color3.fromRGB(0, 0, 255)),    -- น้ำเงิน
+    ColorSequenceKeypoint.new(0.83, Color3.fromRGB(75, 0, 130)),   -- คราม
+    ColorSequenceKeypoint.new(1.0, Color3.fromRGB(148, 0, 211))    -- ม่วง
+}
+gradient.Rotation = 0
+gradient.Parent = button
 button.TextColor3 = Color3.new(1, 1, 1)
-button.Text = "NPC Lock: OFF"
+button.Text = "OFF"
 button.Font = Enum.Font.Fantasy
 button.TextScaled = true
 button.TextSize = 20
@@ -117,7 +128,7 @@ end
 button.MouseButton1Click:Connect(function()
     npcLock = not npcLock
     if npcLock then
-        button.Text = "NPC Lock: ON"
+        button.Text = "ON"
         toggleLoop = runService.RenderStepped:Connect(function()
             local npc = getClosestNPC()
             if npc and npc:FindFirstChild("Humanoid") then
@@ -142,7 +153,7 @@ button.MouseButton1Click:Connect(function()
             end
         end)
     else
-        button.Text = "NPC Lock: OFF"
+        button.Text = "OFF"
         if toggleLoop then
             toggleLoop:Disconnect()
             toggleLoop = nil
